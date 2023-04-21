@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Anuphan:wght@100;300;400;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 body {
   margin: 0;
@@ -8,4 +11,5 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
 }
