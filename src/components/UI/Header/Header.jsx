@@ -1,12 +1,14 @@
 import React from "react";
 import logo from "../../../file/logo.png";
+import githubDark from "../../../file/github-icon.png";
+import githubLight from "../../../file/github-icon-white.png";
 
 const Header = ({ isWhiteTheme, switchButton }) => {
   return (
     <header className={`py-4 ${isWhiteTheme ? "bg-white" : "bg-zinc-900"}`}>
       <nav className="flex justify-between px-6">
         <div className="flex items-center gap-2">
-          <img src={logo} alt="favicon" />
+          <img className="w-[32px]" src={logo} alt="favicon" />
           <h1
             className={`text-3xl font-bold ${
               isWhiteTheme ? "text-zinc-900" : "text-white"
@@ -15,7 +17,22 @@ const Header = ({ isWhiteTheme, switchButton }) => {
             My Board
           </h1>
         </div>
-        {switchButton}
+        <div className="flex items-center gap-7">
+          <a
+            className="transition-all duration-500 ease-in-out
+            hover:scale-105"
+            href="https://github.com/ww-side"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              className="w-[32px]"
+              src={isWhiteTheme ? githubDark : githubLight}
+              alt="GitHub"
+            />
+          </a>
+          {switchButton}
+        </div>
       </nav>
     </header>
   );

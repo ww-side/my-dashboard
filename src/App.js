@@ -1,5 +1,5 @@
-import React from 'react';
-import Dashboard from './components/Dashboard';
+import React from "react";
+import Dashboard from "./components/Dashboard";
 
 const App = () => {
   return (
@@ -7,6 +7,6 @@ const App = () => {
       <Dashboard />
     </div>
   );
-}
+};
 
-export default App
+export default App;

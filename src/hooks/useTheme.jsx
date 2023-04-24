@@ -1,14 +1,14 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 export const useTheme = () => {
   const [isWhiteTheme, setIsWhiteTheme] = useState(
-    localStorage.getItem('isWhiteTheme') === 'true'
+    localStorage.getItem("isWhiteTheme") === "true"
   );
 
   const handleToggleTheme = () => {
-    setIsWhiteTheme(prevState => {
+    setIsWhiteTheme((prevState) => {
       const newState = !prevState;
-      localStorage.setItem('isWhiteTheme', newState.toString());
+      localStorage.setItem("isWhiteTheme", newState.toString());
       return newState;
     });
   };
