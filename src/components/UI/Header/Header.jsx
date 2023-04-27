@@ -2,8 +2,22 @@ import React from "react";
 import logo from "../../../file/logo.png";
 import githubDark from "../../../file/github-icon.png";
 import githubLight from "../../../file/github-icon-white.png";
+import darkIcon from "../../../file/dark-theme-icon.png";
+import lightIcon from "../../../file/light-theme-icon.png";
 
-const Header = ({ isWhiteTheme, switchButton }) => {
+const Header = ({ isWhiteTheme, handleToggleTheme }) => {
+  const switchButton = (
+    <img
+      className={
+        "transition-all duration-500 ease-in-out transform w-[32px] " +
+        "hover:scale-105 cursor-pointer"
+      }
+      onClick={handleToggleTheme}
+      src={isWhiteTheme ? darkIcon : lightIcon}
+      alt="switch-icon"
+    />
+  );
+
   return (
     <header className={`py-4 ${isWhiteTheme ? "bg-white" : "bg-zinc-900"}`}>
       <nav className="flex justify-between px-6">

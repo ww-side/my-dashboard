@@ -4,8 +4,6 @@ import Draggable from "react-draggable";
 import { v4 } from "uuid";
 import { randomColor } from "randomcolor";
 import { useTheme } from "../hooks/useTheme";
-import lightIcon from "../file/light-theme-icon.png";
-import darkIcon from "../file/dark-theme-icon.png";
 
 const Dashboard = () => {
   const [card, setCard] = useState("");
@@ -31,7 +29,7 @@ const Dashboard = () => {
           y: -350,
         },
       };
-      setCards((items) => [...items, newItem]);
+      setCards(items => [...items, newItem]);
       setCard("");
     } else {
       alert("Enter your task");
@@ -39,13 +37,13 @@ const Dashboard = () => {
     }
   };
 
-  const deleteCard = (id) => {
-    setCards(cards.filter((item) => item.id !== id));
+  const deleteCard = id => {
+    setCards(cards.filter(item => item.id !== id));
   };
 
   const updatePosition = (data, id) => {
-    setCards((items) =>
-      items.map((item) =>
+    setCards(items =>
+      items.map(item =>
         item.id === id
           ? { ...item, defaultPosition: { x: data.x, y: data.y } }
           : item
@@ -53,25 +51,16 @@ const Dashboard = () => {
     );
   };
 
-  const keyPress = (e) => {
+  const keyPress = e => {
     if (e.which === 13) addCard();
   };
 
-  const switchButton = (
-    <img
-      className={
-        "transition-all duration-500 ease-in-out transform w-[32px] " +
-        "hover:scale-105 cursor-pointer"
-      }
-      onClick={handleToggleTheme}
-      src={isWhiteTheme ? darkIcon : lightIcon}
-      alt="switch-icon"
-    />
-  );
-
   return (
     <div className="flex flex-col h-screen">
-      <Header isWhiteTheme={isWhiteTheme} switchButton={switchButton} />
+      <Header
+        isWhiteTheme={isWhiteTheme}
+        handleToggleTheme={handleToggleTheme}
+      />
       <div
         className={`flex flex-end justify-center gap-4 pt-5 ${
           isWhiteTheme ? "bg-zinc-200" : "bg-zinc-800"
@@ -87,8 +76,8 @@ const Dashboard = () => {
               : "bg-zinc-800 border-zinc-600 text-zinc-400"
           }`}
           placeholder="Enter your task..."
-          onChange={(e) => setCard(e.target.value)}
-          onKeyPress={(e) => keyPress(e)}
+          onChange={e => setCard(e.target.value)}
+          onKeyPress={e => keyPress(e)}
         />
         <button
           className={`font-bold py-2 px-4 rounded 
@@ -111,7 +100,7 @@ const Dashboard = () => {
         <p className="text-center opacity-30 select-none">BOARD</p>
       </div>
       <div>
-        {cards.map((item) => {
+        {cards.map(item => {
           return (
             <Draggable
               key={item.id}
