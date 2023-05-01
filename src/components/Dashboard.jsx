@@ -77,7 +77,7 @@ const Dashboard = () => {
           }`}
           placeholder="Enter your task..."
           onChange={e => setCard(e.target.value)}
-          onKeyPress={e => keyPress(e)}
+          onKeyDown={e => keyPress(e)}
         />
         <button
           className={`font-bold py-2 px-4 rounded 

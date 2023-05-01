@@ -3,9 +3,9 @@ import Dashboard from "./components/Dashboard";
 
 const App = () => {
   return (
-    <div>
+    <React.Fragment>
       <Dashboard />
-    </div>
+    </React.Fragment>
   );
 };
 

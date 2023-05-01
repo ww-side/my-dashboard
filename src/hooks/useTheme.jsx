@@ -6,9 +6,10 @@ export const useTheme = () => {
   );
 
   const handleToggleTheme = () => {
-    setIsWhiteTheme((prevState) => {
+    setIsWhiteTheme(prevState => {
       const newState = !prevState;
       localStorage.setItem("isWhiteTheme", newState.toString());
+
       return newState;
     });
   };
