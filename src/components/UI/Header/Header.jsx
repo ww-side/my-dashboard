@@ -1,9 +1,9 @@
 import React from "react";
-import logo from "../../../file/logo.png";
-import githubDark from "../../../file/github-icon.png";
-import githubLight from "../../../file/github-icon-white.png";
-import darkIcon from "../../../file/dark-theme-icon.png";
-import lightIcon from "../../../file/light-theme-icon.png";
+import logo from "../../../assets/img/logo.png";
+import githubDark from "../../../assets/img/github-icon.png";
+import githubLight from "../../../assets/img/github-icon-white.png";
+import darkIcon from "../../../assets/img/dark-theme-icon.png";
+import lightIcon from "../../../assets/img/light-theme-icon.png";
 
 const Header = ({ isWhiteTheme, handleToggleTheme }) => {
   const switchButton = (

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import AddForm from "../BoardMain/AddForm/AddForm";
+import AddForm from "./AddForm/AddForm";
 import Card from "./Card/Card";
 import { v4 as id } from "uuid";
 import { randomColor } from "randomcolor";

@@ -1,10 +1,10 @@
 import React from "react";
-import Dashboard from "./components/Dashboard";
+import Board from "./components/Board/Board";
 
 const App = () => {
   return (
     <React.Fragment>
-      <Dashboard />
+      <Board />
     </React.Fragment>
   );
 };
