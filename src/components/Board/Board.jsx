@@ -5,7 +5,7 @@ import { v4 } from "uuid";
 import { randomColor } from "randomcolor";
 import { useTheme } from "../hooks/useTheme";
 
-const Dashboard = () => {
+const Board = () => {
   const [card, setCard] = useState("");
   const [cards, setCards] = useState(
     JSON.parse(localStorage.getItem("cards")) || []
@@ -33,7 +33,7 @@ const Dashboard = () => {
       setCard("");
     } else {
       alert("Enter your task");
-      setCard("");
+      // setCard("");
     }
   };
 
@@ -56,7 +56,7 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex flex-col h-screen overflow-hidden">
       <Header
         isWhiteTheme={isWhiteTheme}
         handleToggleTheme={handleToggleTheme}
@@ -99,7 +99,9 @@ const Dashboard = () => {
       >
         <p className="text-center opacity-30 select-none">BOARD</p>
       </div>
-      <div>
+      <div
+        className={`relative ${isWhiteTheme ? "bg-zinc-200" : "bg-zinc-800"}`}
+      >
         {cards.map(item => {
           return (
             <Draggable
@@ -135,4 +137,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Board;
