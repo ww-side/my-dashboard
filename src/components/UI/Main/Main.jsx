@@ -44,7 +44,7 @@ const Main = ({ isWhiteTheme }) => {
   };
 
   return (
-    <React.Fragment>
+    <div className="relative h-full overflow-hidden">
       <AddForm
         isWhiteTheme={isWhiteTheme}
         card={card}
@@ -52,19 +52,14 @@ const Main = ({ isWhiteTheme }) => {
         addCard={addCard}
       />
       <div
-        className={`flex flex-grow items-center justify-center ${
+        className={`flex flex-grow items-center h-full justify-center ${
           isWhiteTheme ? "bg-zinc-200" : "bg-zinc-800"
         }`}
       >
         <p className="text-center opacity-30 select-none">BOARD</p>
       </div>
-      <Card
-        isWhiteTheme={isWhiteTheme}
-        cards={cards}
-        setCards={setCards}
-        deleteCard={deleteCard}
-      />
-    </React.Fragment>
+      <Card cards={cards} setCards={setCards} deleteCard={deleteCard} />
+    </div>
   );
 };
 

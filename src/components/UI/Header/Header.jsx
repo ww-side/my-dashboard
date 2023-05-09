@@ -1,23 +1,10 @@
 import React from "react";
+import SwitchButton from "./SwitchButton/SwitchButton";
 import logo from "../../../assets/img/logo.png";
 import githubDark from "../../../assets/img/github-icon.png";
 import githubLight from "../../../assets/img/github-icon-white.png";
-import darkIcon from "../../../assets/img/dark-theme-icon.png";
-import lightIcon from "../../../assets/img/light-theme-icon.png";
 
 const Header = ({ isWhiteTheme, handleToggleTheme }) => {
-  const switchButton = (
-    <img
-      className={
-        "transition-all duration-500 ease-in-out transform w-[32px] " +
-        "hover:scale-105 cursor-pointer"
-      }
-      onClick={handleToggleTheme}
-      src={isWhiteTheme ? darkIcon : lightIcon}
-      alt="switch-icon"
-    />
-  );
-
   return (
     <header className={`py-4 ${isWhiteTheme ? "bg-white" : "bg-zinc-900"}`}>
       <nav className="flex justify-between px-6">
@@ -45,7 +32,10 @@ const Header = ({ isWhiteTheme, handleToggleTheme }) => {
               alt="GitHub"
             />
           </a>
-          {switchButton}
+          <SwitchButton
+            isWhiteTheme={isWhiteTheme}
+            handleToggleTheme={handleToggleTheme}
+          />
         </div>
       </nav>
     </header>

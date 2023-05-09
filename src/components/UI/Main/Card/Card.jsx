@@ -1,7 +1,7 @@
 import React from "react";
 import Draggable from "react-draggable";
 
-const Card = ({ isWhiteTheme, cards, setCards, deleteCard }) => {
+const Card = ({ cards, setCards, deleteCard }) => {
   const updatePosition = (data, id) => {
     setCards(items =>
       items.map(item =>
@@ -13,7 +13,7 @@ const Card = ({ isWhiteTheme, cards, setCards, deleteCard }) => {
   };
 
   return (
-    <div className={`relative ${isWhiteTheme ? "bg-zinc-200" : "bg-zinc-800"}`}>
+    <>
       {cards.map(item => {
         return (
           <Draggable
@@ -22,6 +22,7 @@ const Card = ({ isWhiteTheme, cards, setCards, deleteCard }) => {
             onStop={(e, data) => {
               updatePosition(data, item.id);
             }}
+            bounds="parent"
           >
             <div
               className="absolute cursor-move w-[215px]
@@ -44,7 +45,7 @@ const Card = ({ isWhiteTheme, cards, setCards, deleteCard }) => {
           </Draggable>
         );
       })}
-    </div>
+    </>
   );
 };
 
