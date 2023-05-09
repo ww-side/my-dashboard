@@ -1,12 +1,12 @@
 import { useState } from "react";
 
 export const useTheme = () => {
-  const [isWhiteTheme, setIsWhiteTheme] = useState(
+  const [isSwitchTheme, setIsSwitchTheme] = useState(
     localStorage.getItem("isWhiteTheme") === "true"
   );
 
   const handleToggleTheme = () => {
-    setIsWhiteTheme(prevState => {
+    setIsSwitchTheme(prevState => {
       const newState = !prevState;
       localStorage.setItem("isWhiteTheme", newState.toString());
 
@@ -14,5 +14,5 @@ export const useTheme = () => {
     });
   };
 
-  return { isWhiteTheme, handleToggleTheme };
+  return { isSwitchTheme, handleToggleTheme };
 };

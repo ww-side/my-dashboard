@@ -4,15 +4,15 @@ import Main from "../UI/Main/Main";
 import { useTheme } from "../../hooks/useTheme";
 
 const Board = () => {
-  const { isWhiteTheme, handleToggleTheme } = useTheme(false);
+  const { isSwitchTheme, handleToggleTheme } = useTheme(false);
 
   return (
     <div className="flex flex-col h-screen overflow-hidden">
       <Header
-        isWhiteTheme={isWhiteTheme}
+        isSwitchTheme={isSwitchTheme}
         handleToggleTheme={handleToggleTheme}
       />
-      <Main isWhiteTheme={isWhiteTheme} />
+      <Main isSwitchTheme={isSwitchTheme} />
     </div>
   );
 };

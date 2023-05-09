@@ -4,15 +4,15 @@ import logo from "../../../assets/img/logo.png";
 import githubDark from "../../../assets/img/github-icon.png";
 import githubLight from "../../../assets/img/github-icon-white.png";
 
-const Header = ({ isWhiteTheme, handleToggleTheme }) => {
+const Header = ({ isSwitchTheme, handleToggleTheme }) => {
   return (
-    <header className={`py-4 ${isWhiteTheme ? "bg-white" : "bg-zinc-900"}`}>
+    <header className={`py-4 ${isSwitchTheme ? "bg-white" : "bg-zinc-900"}`}>
       <nav className="flex justify-between px-6">
         <div className="flex items-center gap-2">
           <img className="w-[32px]" src={logo} alt="favicon" />
           <h1
             className={`text-3xl font-bold ${
-              isWhiteTheme ? "text-zinc-900" : "text-white"
+              isSwitchTheme ? "text-zinc-900" : "text-white"
             }`}
           >
             My Board
@@ -28,12 +28,12 @@ const Header = ({ isWhiteTheme, handleToggleTheme }) => {
           >
             <img
               className="w-[32px]"
-              src={isWhiteTheme ? githubDark : githubLight}
+              src={isSwitchTheme ? githubDark : githubLight}
               alt="GitHub"
             />
           </a>
           <SwitchButton
-            isWhiteTheme={isWhiteTheme}
+            isSwitchTheme={isSwitchTheme}
             handleToggleTheme={handleToggleTheme}
           />
         </div>

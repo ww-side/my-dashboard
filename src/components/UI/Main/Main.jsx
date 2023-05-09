@@ -5,7 +5,7 @@ import { v4 as id } from "uuid";
 import { randomColor } from "randomcolor";
 import Chance from "chance";
 
-const Main = ({ isWhiteTheme }) => {
+const Main = ({ isSwitchTheme }) => {
   const [card, setCard] = useState("");
   const [cards, setCards] = useState(
     JSON.parse(localStorage.getItem("cards")) || []
@@ -46,14 +46,14 @@ const Main = ({ isWhiteTheme }) => {
   return (
     <div className="relative h-full overflow-hidden">
       <AddForm
-        isWhiteTheme={isWhiteTheme}
+        isSwitchTheme={isSwitchTheme}
         card={card}
         setCard={setCard}
         addCard={addCard}
       />
       <div
         className={`flex flex-grow items-center h-full justify-center ${
-          isWhiteTheme ? "bg-zinc-200" : "bg-zinc-800"
+          isSwitchTheme ? "bg-zinc-200" : "bg-zinc-800"
         }`}
       >
         <p className="text-center opacity-30 select-none">BOARD</p>
